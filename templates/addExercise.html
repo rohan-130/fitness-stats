@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Add Exercises.{% endblock %}
+
+{% block css %}
+	#exerciseName{
+		width: 500px;
+	}
+	button{
+		margin-bottom: 7px;
+	}
+	.plan{
+		background-color: 	#404040;
+	}
+{% endblock %}
+
+{% block body %}
+	<div class="addActivity">
+		<h1>Add an Exercise.</h1>
+		<input type="text" id="exerciseName" placeholder="Exercise Name">
+		<br>
+		<input type="text" id="unit" placeholder="Unit">
+		<br>
+		<button id="submitExercise">Add</button>
+		<br>
+		<button onclick="window.location.href='/fitness/plan'"class="plan">Make Plan</button>
+	</div>
+{% endblock %}

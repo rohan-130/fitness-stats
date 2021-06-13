@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block css %}
+
+.box{
+		width: 100vw;
+		margin-top: 1in;
+		border-radius: 12px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 5vh;
+	}
+	.sign{
+		margin-left: 50vw;
+		color: #DCDCDC;
+		text-decoration: none;
+		font-size: 40px;
+	}
+	.invalid{
+		color: #DCDCDC;
+		margin-top: 1cm;
+		font-size: 40px;
+		margin-left: 5vw;
+	}
+	@media screen and (min-device-width:1200px){
+		.box{
+			border: solid 0.3px;
+			border-color: #DCDCDC;
+			height: 4.2in;
+			width: 4in;
+			padding-top: 0.3in;
+			padding-bottom: 0.5in;
+			padding-left: 0.75in;
+			margin-top: 1in;
+		}
+		.sign{
+			margin-left: 1.15in;
+		}
+		.invalid{
+			color: #DCDCDC;
+			margin-top: 0.3cm;
+			margin-left: 0.4cm;
+		}
+	}
+
+{% endblock %}
+
+{% block body%}
+	<div class="box">
+		<h1>Sign Up</h1>
+		<form action="register" method="POST">
+			{% csrf_token %}
+			<input type="text" name="first_name" placeholder="First Name">
+			<br>
+			<input type="text" name="username" placeholder="Username">
+			<br>
+			<input type="email" name="email" placeholder="Email">
+			<br>
+			<input type="password" name="password" placeholder="Password">
+			<br>
+			<input type="submit">
+			<a class="sign" href="/accounts/login">Log In</a>
+		</form>
+
+		{% for message in messages %}
+			<p class="invalid">{{message}}</p>
+		{% endfor %}
+
+	</div>
+
+{% endblock %}

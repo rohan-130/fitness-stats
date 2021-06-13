@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block title %}Make a Plan{% endblock %}
+
+{% block css %}
+	.day{
+		display: inline-block;
+	}
+	.days{
+		margin-top: 2mm;
+		margin-left: 5vw;
+		padding-bottom: 2.8vh;
+	}
+	input[type=checkbox]:checked ~ label{
+		background-color: #992600;
+	}
+	input[type="checkbox"]{
+		display: none;
+	}
+	.labelDay{
+		color: black;
+		padding-right: 2.3vh;
+		padding-left: 2.3vh;
+		padding-top: 2vh;
+		padding-bottom: 2vh;
+		font-size: 38px;
+		margin-right: 8px;
+		border-radius: 9px;
+		background-color: #116466;
+		color: #DCDCDC;
+		cursor: pointer;
+	}
+	.card{
+		width: 90vw;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		margin-right: auto;
+		margin-left: auto;
+		border-radius: 9px;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		padding-left: 50px;
+		height: 12vh;
+		text-align: left;
+		background-color: #116466;
+		color: #DCDCDC;
+	}
+	h2{
+		font-size: 50px;
+		font-weight: normal;
+		margin-bottom: 10px;
+		width: 30vw;
+	}
+	p{
+		font-size: 40px;
+		width: 30vw;
+	}
+	.displayActivities{
+		padding: 30px;
+		text-align: center;
+		overflow: scroll;
+		height: 33%;
+		padding-bottom: 10%;
+	}
+	@media screen and (min-device-width:1200px){
+		#exerciseName{
+			width: 500px;
+		}
+		#unit{
+			width: 200px;
+		}
+		.card{
+			width: 70%;
+			height: 10%;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			margin-left: 1%;
+			margin-right: 1%;
+			border-radius: 9px;
+			padding-top: 50px;
+			padding-bottom: 20px;
+			padding-left: 50px;
+			padding-right: 10px;
+			margin-right: auto;
+			margin-left: auto;
+			display: flex;
+			background-color: #116466;
+			color: white;
+		}
+		h2{
+			font-size: 25px;
+			font-weight: normal;
+			margin-top: 0vh;
+			color: white;
+			font-weight: bold;				
+		}
+		p{
+			font-size: 17px;
+		}
+		.displayActivities{
+			text-align: center;
+			overflow-x: hidden;
+			height: 86vh;
+			width: 45vw;
+			float: right;
+			flex: 1;
+			overflow-y: scroll;
+			padding: 0;
+			margin-top: 2vh;
+			margin-right: 0.7vw;
+			border-radius: 5px;
+		}
+		.days{
+			margin-left: 1vw;
+		}
+		.labelDay{
+			color: black;
+			padding: 12px;
+			font-size: 20px;
+			margin-right: 3px;
+			border-radius: 9px;
+			background-color: #116466;
+			color: #DCDCDC;
+			cursor: pointer;
+		}
+	}
+{% endblock %}
+
+{% block body%}
+
+<div class="container">
+	<div class="addActivity">
+		<h1>Make a Plan.</h1>
+		<select id="selectActivity" placeholder="Choose Activity">
+			<option disabled selected>Click to Choose Activity</option>
+			<option>Run</option>
+			<option>Jog</option>
+			<option>Walk</option>
+			<option>Push Ups</option>
+			<option>Pull Ups</option>
+			<option>Squats</option>
+		</select>
+		<br>
+		<input type="number" name="time" id="time" inputmode="decimal" placeholder="Time">
+		<br>
+		<div class="days">
+			<div class="day">
+				<input type="checkbox" id="day1">
+				<label for="day1" class="labelDay">M</label>
+			</div>
+			<div class="day">
+				<input type="checkbox" id="day2">
+				<label for="day2" class="labelDay">T</label>
+			</div>
+			<div class="day">
+				<input type="checkbox" id="day3">
+				<label for="day3" class="labelDay">W</label>
+			</div>
+			<div class="day">
+				<input type="checkbox" id="day4">
+				<label for="day4" class="labelDay">T</label>
+			</div>
+			<div class="day">
+				<input type="checkbox" id="day5">
+				<label for="day5" class="labelDay">F</label>
+			</div>
+			<div class="day">
+				<input type="checkbox" id="day6">
+				<label for="day6" class="labelDay">S</label>
+			</div>
+			<div class="day">
+				<input type="checkbox" id="day7">
+				<label for="day7" class="labelDay">S</label>
+			</div>
+		</div>
+		<button onClick="addActivity();">Add</button>
+	</div>
+	<div class="displayActivities" id="activityList">
+	</div>
+</div>
+{% endblock %}

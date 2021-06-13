@@ -1,0 +1,190 @@
+		*{
+			margin: 0;
+			font-family: sans-serif;
+			outline: none;
+		}
+		html{
+			-ms-touch-action: manipulation;
+			touch-action: manipulation;
+		}
+		body{
+			background-color: #1A1A1D;
+			overflow-y: hidden;
+			-webkit-appearance: none;
+		}
+		input[type="text"], input[type="email"], input[type="password"]{
+			padding: 2.5vh;
+			border-radius: 12px;
+			font-size: 45px;
+			margin-left: 5vw;
+			margin-bottom: 1vh;
+			-webkit-appearance: none;
+			background-color: #116466;
+			color: #DCDCDC;
+			border: none;
+			width: 90vw;
+		}
+		header{
+			background-color: #116466;
+			font-size: 40px;
+			height: 10vh;
+			width: 100vw;
+		}
+		.navbarItem{
+			float: right;
+			margin-right: 3vw;
+			margin-top: 3.5vh;
+			text-decoration: none;
+			color: #DCDCDC;
+		}
+		.logoImage{
+			height: 7vh;
+		}
+		.logo{
+			float: left;
+			margin-left: 3vw;
+			margin-top: 1.8vh;
+		}
+		h1{
+			margin-top: 3vh;
+			margin-bottom: 1vh;
+			margin-left: 5vw;
+			font-size: 50px;
+			color: #DCDCDC;
+		}
+		select{
+			width: 90vw;
+			padding: 2vh;
+			border-radius: 12px;
+			font-size: 45px;
+			margin-left: 5vw;
+			margin-bottom: 1vh;
+			-webkit-appearance: none;
+			background-color: #116466;
+			color: #DCDCDC;
+			border: none;
+			cursor: pointer;
+		}
+		input[type="number"]{
+			padding: 2vh;
+			border-radius: 12px;
+			font-size: 45px;
+			margin-left: 5vw;
+			margin-bottom: 2.5vh;
+			-webkit-appearance: none;
+			background-color: #116466;
+			color: #DCDCDC;
+			border: none;
+			cursor: text;
+		}
+		button, input[type="submit"]{
+			padding: 4vh;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			margin-left: 5%;
+			font-size: 40px;
+			-webkit-appearance: none;
+			border-radius: 12px;
+			background-color: #992600;
+			color: #DCDCDC;
+			text-align: left;
+			border: none;
+		}
+		button:hover{
+			transition-duration: 0.1s;
+			background-color: brown;
+			cursor: pointer;
+		}
+		.addActivity{
+			padding-top: 5%;
+			padding-bottom: 5%;
+			overflow: hidden;
+		}
+		.landscapeWarning{
+			display: none;
+		}
+		input::-webkit-input-placeholder {
+			color: #DCDCDC;
+		}
+		@media screen and (max-device-width:1200px) and (orientation:landscape){
+			body{
+				display: none;
+			}
+			.landscapeWarning{
+				display: block;
+				visibility: visible;
+			}
+		}
+		@media screen and (min-device-width:1200px){
+			header{
+				font-size: 16px;
+				height: 0.8in;
+			}
+			.navbarItem{
+				margin-top: 0.3in;
+			}
+			.logoImage{
+				height: 0.6in;
+			}
+			.logo{
+				margin-top: 0.1in;
+			}
+			input[type="text"], input[type="email"], input[type="password"]{
+				padding: 15px;
+				font-size: 20px;
+				margin-left: 1vw;
+				border-radius: 5px;
+				margin-bottom: 1vh;
+			}
+			body{
+				/*overflow: hidden;*/
+				min-width: 12in;
+			}
+			h1{
+				margin-top: 5vh;
+				margin-left: 1vw;
+				font-size: 40px;
+				margin-bottom: 3mm;
+			}
+			select{
+				width: 500px;
+				padding: 15px;
+				font-size: 20px;
+				margin-left: 1vw;
+				border-radius: 5px;
+				margin-bottom: 2mm;
+			}
+			input[type="number"]{
+				width: 200px;
+				padding: 15px;
+				border-radius: 12px;
+				font-size: 20px;
+				margin-left: 1vw;
+				border-radius: 5px;
+				margin-bottom: 3mm;
+			}
+			button, input[type="submit"]{
+				padding: 12px;
+				padding-right: 30px;
+				padding-left: 30px;
+				margin-left: 1vw;
+				font-size: 20px;
+				border-radius: 5px;
+			}
+			.container{
+				display: flex;
+				height: 90vh;
+			}
+			.addActivity{				
+				float: left;
+				width: 46vw;
+				height: 4in;
+				padding: 0;
+				margin: 0;
+				margin-top: 22.5vh;
+				flex: 1;
+			}
+			::-webkit-scrollbar{
+			    display: none;
+			}
+		}
