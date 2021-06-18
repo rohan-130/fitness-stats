@@ -22,7 +22,7 @@ def register(request):
 			user = User.objects.create_user(first_name=first_name, email=email, username=username, password=password)
 			user.save()
 			auth.login(request, user)
-			return redirect('/fitness/add')
+			return redirect('/fitness/plan')
 
 	else:	
 		return render(request, 'register.html')
@@ -40,7 +40,7 @@ def login(request):
 
 		if user is not None:
 			auth.login(request, user)
-			return redirect('/fitness/add')
+			return redirect('/fitness/plan')
 		else:
 			messages.info(request, "Incorrect Credentials!")
 	return render(request, 'login.html')

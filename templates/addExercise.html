@@ -10,19 +10,88 @@
 		margin-bottom: 7px;
 	}
 	.plan{
-		background-color: 	#404040;
+		top: 78vh;
+		right: 23vw;
+		position: fixed;
 	}
+	.card{
+		background-color: #1A1A1D;
+		display: inline-block;
+		text-align: center;
+		width: 40vw;
+		padding-top: 7vh;
+		padding-bottom: 7vh;
+		margin-bottom: 1vh;
+		margin-top: 1vh;
+		color: #DCDCDC;
+		border-radius: 9px;
+		font-size: 30px;
+	}
+	.displayActivities{
+		background-color: #116466; 
+		width: 90%; 
+		height: 30vh; 
+		margin-right: auto;
+		margin-left: auto;
+		position: relative;
+	}
+	@media screen and (min-device-width:1200px){
+	.card{
+		background-color: #292E2E;
+		display: inline-block;
+		text-align: center;
+		width: 20vw;
+		padding-top: 10vh;
+		padding-bottom: 10vh;
+		margin-bottom: 2vh;
+		margin-top: 2vh;
+		color: #DCDCDC;
+		border-radius: 9px;
+		border-radius: 9px;
+	}
+	.displayActivities{
+		width: 45vw;
+		height: 85vh;
+		margin-right: 0.7vw;
+	}
+	.card{
+		width: 20vw;
+		padding-top: 10vh;
+		padding-bottom: 10vh;
+		margin-bottom: 1vh;
+		margin-top: 1vh;
+		font-size: 17px;
+		margin-right: 0.2vw;
+		margin-left: 0.2vw;
+	}
+	.plan{
+		top: 85vh;
+		right: 15vw;
+		position: fixed;
+	}
+}
+
 {% endblock %}
 
 {% block body %}
-	<div class="addActivity">
+	<form class="addActivity" method="POST" action="add">
+		{% csrf_token %}
 		<h1>Add an Exercise.</h1>
-		<input type="text" id="exerciseName" placeholder="Exercise Name">
+		<input type="text" id="exerciseName" placeholder="Exercise Name" name="exerciseName">
 		<br>
-		<input type="text" id="unit" placeholder="Unit">
+		<input type="text" id="unit" placeholder="Unit" name="unit">
 		<br>
-		<button id="submitExercise">Add</button>
+		<input type="submit" id="submitExercise" value="Add">
 		<br>
-		<button onclick="window.location.href='/fitness/plan'"class="plan">Make Plan</button>
+	</form>
+	<div class="displayActivities">
+		<h1 style="margin-left: 0;">Your Exercise List</h1>
+		{% for ex in list %}
+			<div class="card">
+				<h2>{{ex}}</h2>
+			</div>
+		{% endfor %}
+		<br>
+		<button onclick="window.location.href='/fitness/plan'" class="plan">Proceed to Make Plan</button>
 	</div>
 {% endblock %}

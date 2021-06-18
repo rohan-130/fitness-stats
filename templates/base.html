@@ -1,38 +1,21 @@
+{% csrf_token %}
 {% load static %}
 <head>
 	<link rel="stylesheet" href="{% static '/base.css' %}">
+	<link rel="shortcut icon" href="https://cdn.bleacherreport.net/images/team_logos/328x328/mens_tennis.png">
 	<style>
 		{% block css %}{% endblock %}
 	</style>
-	<script>
-		function addActivity(){
-			var days = "";
-			var dayNames = ['M', 'Tu', 'W', 'Th', 'F', 'Sa', 'Su'];
-			for(var i=1; i<=7; i++){
-				if (document.getElementById("day"+i).checked == true){
-					days = days + " " + dayNames[i-1];
-				}
-			}
-			
-			var list = document.getElementById("activityList");
-			var time = document.getElementById("time").value;
-			var activity = document.getElementById("selectActivity").value;
-			var addition = "<div class='card'><h2>"+activity+"</h2><p>"+time+" minutes <br>"+days+"</p></div>";
-			if (activity != "Click to Choose Activity" && time>0){
-				list.innerHTML += addition;
-			}
-		}
-	</script>
 	<title>{% block title %}{% endblock %}</title>
 	<header>
 		<a class="logo"><img class="logoImage" src="{% static '/logo.png' %}"></a>
 		<div class="navbar">
 			{% if user.is_authenticated %}
-				<a class="navbarItem">{{user.username}}</a>
-				<a class="navbarItem" href="/accounts/logout">Logout</a>
+				<a class="navbarItem dis" href="/accounts/logout" style="float: right;">LOGOUT</a>
+				<a class="navbarItem dis" style="float: right;">{{user.username}}</a>
 			{% endif %}
-			<a class="navbarItem">LogFit</a>
-			<a class="navbarItem">Your Log</a>
+			<a class="navbarItem" href="/fitness/plan">MAKE PLAN</a>
+			<a class="navbarItem" href="/fitness/tasks">TASKS FOR TODAY</a>
 		</div>
 	</header>
 </head>

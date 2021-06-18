@@ -26,29 +26,44 @@
 		margin-left: 5vw;
 	}
 	@media screen and (min-device-width:1200px){
+		.outerContainer{
+			position: relative;
+			height: 89.6vh;
+			min-height: 6in;
+		}
 		.box{
-			border: solid 0.3px;
+			border: solid 2px;
 			border-color: #DCDCDC;
-			height: 4.2in;
-			width: 4in;
-			padding-top: 0.3in;
-			padding-bottom: 0.5in;
-			padding-left: 0.75in;
+			height: 4.7in;
+			width: 5in;
+			padding: 0;
 			margin-top: 1in;
+			position:absolute;
+			top: 0; bottom: 0; left: 0; right: 0;
+			margin: auto;
 		}
 		.sign{
-			margin-left: 1.15in;
+			margin-left: 2.2in;
+			font-size: 17px;
 		}
 		.invalid{
 			color: #DCDCDC;
 			margin-top: 0.3cm;
-			margin-left: 0.4cm;
+			margin-left: 0.5in;
+			font-size: 17px
+		}
+		h1, input[type="submit"], input[type="text"], input[type="password"], input[type="email"]{
+			margin-left: 0.5in;
+		}
+		h1{
+			margin-top: 0.5in;
 		}
 	}
 
 {% endblock %}
 
 {% block body%}
+<div class="outerContainer">
 	<div class="box">
 		<h1>Sign Up</h1>
 		<form action="register" method="POST">
@@ -70,5 +85,6 @@
 		{% endfor %}
 
 	</div>
+</div>
 
 {% endblock %}

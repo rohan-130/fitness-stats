@@ -9,7 +9,7 @@
 		}
 		body{
 			background-color: #1A1A1D;
-			overflow-y: hidden;
+			/*overflow-y: hidden;*/
 			-webkit-appearance: none;
 		}
 		input[type="text"], input[type="email"], input[type="password"]{
@@ -31,11 +31,16 @@
 			width: 100vw;
 		}
 		.navbarItem{
-			float: right;
+			float: left;
 			margin-right: 3vw;
 			margin-top: 3.5vh;
 			text-decoration: none;
 			color: #DCDCDC;
+			letter-spacing: 1px;
+			visibility: hidden;/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+		}
+		.vis{
+			visibility: visible;
 		}
 		.logoImage{
 			height: 7vh;
@@ -44,6 +49,7 @@
 			float: left;
 			margin-left: 3vw;
 			margin-top: 1.8vh;
+			margin-right: 3vw;
 		}
 		h1{
 			margin-top: 3vh;
@@ -91,14 +97,21 @@
 			border: none;
 		}
 		button:hover{
-			transition-duration: 0.1s;
+			transition-duration: 0.6s;
 			background-color: brown;
 			cursor: pointer;
 		}
 		.addActivity{
 			padding-top: 5%;
 			padding-bottom: 5%;
-			overflow: hidden;
+		}
+		.displayActivities{
+			padding: 30px;
+			text-align: center;
+			overflow: scroll;
+			height: 35vh;
+			padding-bottom: 10%;
+			border-radius: 9px;
 		}
 		.landscapeWarning{
 			display: none;
@@ -122,6 +135,7 @@
 			}
 			.navbarItem{
 				margin-top: 0.3in;
+				visibility: visible;
 			}
 			.logoImage{
 				height: 0.6in;
@@ -135,6 +149,7 @@
 				margin-left: 1vw;
 				border-radius: 5px;
 				margin-bottom: 1vh;
+				width: 4in;
 			}
 			body{
 				/*overflow: hidden;*/
@@ -183,6 +198,18 @@
 				margin: 0;
 				margin-top: 22.5vh;
 				flex: 1;
+			}
+			.displayActivities{
+				text-align: center;
+				overflow-x: hidden;
+				height: 86vh;
+				width: 45vw;
+				float: right;
+				flex: 1;
+				overflow-y: scroll;
+				padding: 0;
+				margin-top: 2vh;
+				margin-right: 0.7vw;
 			}
 			::-webkit-scrollbar{
 			    display: none;

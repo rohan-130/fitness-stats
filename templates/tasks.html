@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Todays Tasks{% endblock %}
+
+{% block css %}
+	.container1{
+		background-color: #116466;
+		border-radius: 9px;
+		overflow: scroll;
+	}
+	@media screen and (min-device-width:1200px){
+		.container1{
+			height: 85%;
+			width: 46%;
+			margin-top: 1.2%;
+			margin-left: 2%;
+			overflow-y: scroll;
+		}
+		.taskCompletedCheck{
+			margin-left: 10%;
+		}
+		.taskCompletedLabel{
+
+		}	
+		h1{
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.outer{
+			padding-right: 40px;
+			padding-left: 40px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			width: 70%;
+			margin-right: auto;
+			margin-left: auto;
+			border-radius: 9px;
+			color: white;
+			display: flex;
+			padding: 0;
+		}
+		.outer:hover{
+			-webkit-box-shadow: 0 0 5px #00B4AD;
+			box-shadow: 0 0 5px #00B4AD;
+			transition-duration: 0s;
+		}
+		.inner1{
+			background-color: #992600;
+			flex: 2;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			padding-right: 20px;
+			padding-left: 20px;
+			text-align: center;
+			border-top-left-radius: 9px;
+			border-bottom-left-radius: 9px;
+		}
+		.inner2{
+			background-color: #292E2E;
+			flex: 5;
+			text-align: center;
+			padding: 40px;
+			border-top-right-radius: 9px;
+			border-bottom-right-radius: 9px;
+		}
+		.doneButton{
+			flex: 0.5;
+			background-color: #1A1A1D;
+			text-align: center;
+			border-radius: 50%;
+			height: 30px;
+			width: 30px;
+			padding-top: 0;
+			padding-bottom: 0;
+			padding-left: 5;
+			padding-right: 5;
+		}
+	}
+{% endblock %}
+
+{% block body %}
+<div class="container1">
+	<h1>Tasks for Today</h1>
+	<form method="POST" action="">
+		{% csrf_token %}
+		{% for item in plan_list %}
+			<button class="outer">
+				<div class="inner1">
+					{{item.exercise_name}}
+				</div>
+				<div class="inner2">
+					x {{item.exercise_time}}
+				</div>
+			</button>
+		{% endfor %}
+	</form>
+</div>
+{% endblock %}
+
+
+<button class="doneButton">&#10003;</button>

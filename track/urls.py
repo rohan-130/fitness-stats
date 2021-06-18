@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     path('add', views.addExerciseView, name="add"),
     path('plan', views.makePlanView, name="plan"),
+    path('tasks', views.tasksView, name="tasks")
 ]

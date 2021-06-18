@@ -3,9 +3,9 @@
 {% block title %}Log In{% endblock %}
 
 {% block css %}
-*{
-	border-radius: 0;
-}
+	*{
+		border-radius: 0;
+	}
 	.box{
 		width: 100vw;
 		margin-right: auto;
@@ -27,28 +27,42 @@
 		margin-left: 5vw;
 	}
 	@media screen and (min-device-width:1200px){
+		.outerContainer{
+			position: relative;
+			height: 89.6vh;
+			min-height: 4.5in;
+		}
 		.box{	
 			border: solid 2px;
 			border-color: #DCDCDC;
-			height: 3.3in;
-			width: 4in;
-			padding-top: 0.5in;
-			padding-bottom: 0.5in;
-			padding-left: 0.75in;
-			margin-top: 1.4in;
+			height: 3.5in;
+			width: 5in;
+			padding: 0;
+			position:absolute;
+			top: 0; bottom: 0; left: 0; right: 0;
+			margin: auto;
 		}
 		.sign{
-			margin-left: 0.45in;
+			margin-left: 1.45in;
+			font-size: 17px;
 		}
 		.invalid{
 			color: #DCDCDC;
 			margin-top: 0.3cm;
-			margin-left: 0.4cm;
+			margin-left: 0.5in;
+			font-size: 17px;
+		}
+		h1, input[type="submit"], input[type="text"], input[type="password"]{
+			margin-left: 0.5in;
+		}
+		h1{
+			margin-top: 0.5in;
 		}
 	}
 {% endblock %}
 
 {% block body%}
+<div class="outerContainer">
 	<div class="box">
 		<h1>Log In</h1>
 		<form action="login" method="POST">
@@ -66,4 +80,5 @@
 		{% endfor %}
 
 	</div>
+</div>
 {% endblock %}

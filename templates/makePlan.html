@@ -49,18 +49,15 @@
 		font-size: 50px;
 		font-weight: normal;
 		margin-bottom: 10px;
-		width: 30vw;
+		width: 26vw;
 	}
 	p{
 		font-size: 40px;
 		width: 30vw;
 	}
-	.displayActivities{
-		padding: 30px;
-		text-align: center;
-		overflow: scroll;
-		height: 33%;
-		padding-bottom: 10%;
+	.deleteButton:hover{
+		background-color: black;
+		transition-duration: 0.3s;
 	}
 	@media screen and (min-device-width:1200px){
 		#exerciseName{
@@ -77,7 +74,7 @@
 			margin-left: 1%;
 			margin-right: 1%;
 			border-radius: 9px;
-			padding-top: 50px;
+			padding-top: 55px;
 			padding-bottom: 20px;
 			padding-left: 50px;
 			padding-right: 10px;
@@ -86,6 +83,7 @@
 			display: flex;
 			background-color: #116466;
 			color: white;
+			border-radius: 12px;
 		}
 		h2{
 			font-size: 25px;
@@ -97,21 +95,10 @@
 		p{
 			font-size: 17px;
 		}
-		.displayActivities{
-			text-align: center;
-			overflow-x: hidden;
-			height: 86vh;
-			width: 45vw;
-			float: right;
-			flex: 1;
-			overflow-y: scroll;
-			padding: 0;
-			margin-top: 2vh;
-			margin-right: 0.7vw;
-			border-radius: 5px;
-		}
 		.days{
 			margin-left: 1vw;
+			margin-bottom: -0.5%;
+			margin-top: 1.5%;
 		}
 		.labelDay{
 			color: black;
@@ -123,59 +110,79 @@
 			color: #DCDCDC;
 			cursor: pointer;
 		}
+		form{
+			width: 100vw;
+		}
+		.deleteButton{
+			background-color: #1A1A1D;
+			text-align: center;
+			border-radius: 50%;
+			height: 30px;
+			width: 30px;
+			padding-top: 0;
+			padding-bottom: 0;
+			padding-left: 5;
+			padding-right: 5;
+		}
 	}
 {% endblock %}
 
 {% block body%}
 
-<div class="container">
-	<div class="addActivity">
-		<h1>Make a Plan.</h1>
-		<select id="selectActivity" placeholder="Choose Activity">
-			<option disabled selected>Click to Choose Activity</option>
-			<option>Run</option>
-			<option>Jog</option>
-			<option>Walk</option>
-			<option>Push Ups</option>
-			<option>Pull Ups</option>
-			<option>Squats</option>
-		</select>
-		<br>
-		<input type="number" name="time" id="time" inputmode="decimal" placeholder="Time">
-		<br>
-		<div class="days">
-			<div class="day">
-				<input type="checkbox" id="day1">
-				<label for="day1" class="labelDay">M</label>
+<div class="container"> 
+	<form method="POST" action="plan">
+		<div class="addActivity"> 
+			{% csrf_token %}
+			<h1>Make a Plan</h1>
+			<!--<select id="selectActivity" placeholder="Choose Activity" name="exercise_name">
+				<option disabled selected>Click to Choose Activity</option>
+				{% for exercise in exercise_list %}
+				<option>{{exercise}}</option>
+				{% endfor %}
+			</select>
+			<br>-->
+			<input type="text" placeholder="Exercise Name" name="exercise_name">
+			<br>
+			<input type="text" id="time" placeholder="Time" name="time" >
+			<br>
+			<div class="days">
+				<div class="day">
+					<input type="checkbox" id="day1" name="mon" value=1>
+					<label for="day1" class="labelDay">M</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day2" name="tue" value=1>
+					<label for="day2" class="labelDay">T</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day3" name="wed" value=1>
+					<label for="day3" class="labelDay">W</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day4" name="thu" value=1>
+					<label for="day4" class="labelDay">T</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day5" name="fri" value=1>
+					<label for="day5" class="labelDay">F</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day6" name="sat" value=1>
+					<label for="day6" class="labelDay">S</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day7" name="sun" value=1>
+					<label for="day7" class="labelDay">S</label>
+				</div>
 			</div>
-			<div class="day">
-				<input type="checkbox" id="day2">
-				<label for="day2" class="labelDay">T</label>
-			</div>
-			<div class="day">
-				<input type="checkbox" id="day3">
-				<label for="day3" class="labelDay">W</label>
-			</div>
-			<div class="day">
-				<input type="checkbox" id="day4">
-				<label for="day4" class="labelDay">T</label>
-			</div>
-			<div class="day">
-				<input type="checkbox" id="day5">
-				<label for="day5" class="labelDay">F</label>
-			</div>
-			<div class="day">
-				<input type="checkbox" id="day6">
-				<label for="day6" class="labelDay">S</label>
-			</div>
-			<div class="day">
-				<input type="checkbox" id="day7">
-				<label for="day7" class="labelDay">S</label>
-			</div>
+			<input type="submit" value="Add" name="submit">
 		</div>
-		<button onClick="addActivity();">Add</button>
-	</div>
-	<div class="displayActivities" id="activityList">
-	</div>
-</div>
+
+		<div class="displayActivities" id="activityList" action="plan" request="POST">
+			{% csrf_token %}
+			{% for exercise in plan_list %}
+				<div class='card'><h2>{{exercise}}</h2><button class="deleteButton" value="{{exercise.id}}" name="submit">-</button></div>
+			{% endfor %}
+		</div>
+	</form>
 {% endblock %}
