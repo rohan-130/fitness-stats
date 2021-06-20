@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Health{% endblock %}
+
+{% block css %}
+
+	.centerContainer{
+		width: 31vw;
+		margin-left: auto;
+		margin-right: auto;
+		height: 3.5in;
+		position: absolute;
+		top: 0; bottom: 0; left: 0; right: 0;
+		margin: auto;
+		border: solid 2px;
+		border-color: #DCDCDC;
+		border-radius: 12px;
+		padding: 0;
+	}
+	.outerContainer{
+			position: relative;
+			height: 89.6vh;
+			min-height: 4.5in;
+		}
+		h1, input[type="submit"], .days, select, p{
+			margin-left: 0.5in;
+		}
+		h1{
+		margin-top: 1.3cm;
+	}
+
+{% endblock %}
+
+{% block body%}
+<div class="outerContainer">
+	<div class="centerContainer">
+		<h1>Health</h1>
+		<p>Select the days to log your health</p>
+		<select>
+			<option disabled selected hidden>Select an Option</option>
+			<option>Blood Pressure</option>
+			<option>Weight</option>
+		</select>
+			<div class="days">
+				<div class="day">
+					<input type="checkbox" id="day1" name="mon" value=1>
+					<label for="day1" class="labelDay">M</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day2" name="tue" value=1>
+					<label for="day2" class="labelDay">T</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day3" name="wed" value=1>
+					<label for="day3" class="labelDay">W</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day4" name="thu" value=1>
+					<label for="day4" class="labelDay">T</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day5" name="fri" value=1>
+					<label for="day5" class="labelDay">F</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day6" name="sat" value=1>
+					<label for="day6" class="labelDay">S</label>
+				</div>
+				<div class="day">
+					<input type="checkbox" id="day7" name="sun" value=1>
+					<label for="day7" class="labelDay">S</label>
+				</div>
+			</div>
+			<input type="submit" value="Add" name="submit">	
+				
+	</div>
+</div>
+{% endblock %}

@@ -12,6 +12,15 @@
 			/*overflow-y: hidden;*/
 			-webkit-appearance: none;
 		}
+		::-moz-selection { /* Code for Firefox */
+			color: #116466;
+			background: white;
+		}
+
+		::selection {
+			color: #116466;
+			background: white;
+		}
 		input[type="text"], input[type="email"], input[type="password"]{
 			padding: 2.5vh;
 			border-radius: 12px;
@@ -39,7 +48,7 @@
 			letter-spacing: 1px;
 			visibility: hidden;/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 		}
-		.vis{
+		.dis{
 			visibility: visible;
 		}
 		.logoImage{
@@ -56,6 +65,12 @@
 			margin-bottom: 1vh;
 			margin-left: 5vw;
 			font-size: 50px;
+			color: #DCDCDC;
+		}
+		h3{
+			margin-top: 3vh;
+			margin-bottom: 1vh;
+			margin-left: 5vw;
 			color: #DCDCDC;
 		}
 		select{
@@ -116,8 +131,39 @@
 		.landscapeWarning{
 			display: none;
 		}
+		.day{
+			display: inline-block;
+		}
+		.days{
+			margin-top: 0.8cm;
+			margin-left: 5vw;
+			padding-bottom: 2.8vh;
+		}
+		input[type=checkbox]:checked ~ label{
+			background-color: #992600;
+		}
+		input[type="checkbox"]{
+			display: none;
+		}
+		.labelDay{
+			color: black;
+			padding-right: 2.3vh;
+			padding-left: 2.3vh;
+			padding-top: 2vh;
+			padding-bottom: 2vh;
+			font-size: 38px;
+			margin-right: 8px;
+			border-radius: 9px;
+			background-color: #116466;
+			color: #DCDCDC;
+			cursor: pointer;
+		}
 		input::-webkit-input-placeholder {
 			color: #DCDCDC;
+		}
+		p{
+			color: #DCDCDC;
+			margin-left: 5vw;
 		}
 		@media screen and (max-device-width:1200px) and (orientation:landscape){
 			body{
@@ -132,6 +178,8 @@
 			header{
 				font-size: 16px;
 				height: 0.8in;
+				width: 100%;
+				min-width: 9in;
 			}
 			.navbarItem{
 				margin-top: 0.3in;
@@ -148,12 +196,11 @@
 				font-size: 20px;
 				margin-left: 1vw;
 				border-radius: 5px;
-				margin-bottom: 1vh;
+				margin-bottom: 8px;
 				width: 4in;
 			}
 			body{
 				/*overflow: hidden;*/
-				min-width: 12in;
 			}
 			h1{
 				margin-top: 5vh;
@@ -161,8 +208,18 @@
 				font-size: 40px;
 				margin-bottom: 3mm;
 			}
+			h3{
+				margin-top: -1vh;
+				margin-left: 1vw;
+				margin-bottom: 3mm;
+			}
+			p{
+				margin-left: 1vw;
+				margin-top: -1vh;
+				margin-bottom: 1vh;
+			}
 			select{
-				width: 500px;
+				width: 382px;
 				padding: 15px;
 				font-size: 20px;
 				margin-left: 1vw;
@@ -200,16 +257,33 @@
 				flex: 1;
 			}
 			.displayActivities{
+				width: 40vw;
 				text-align: center;
 				overflow-x: hidden;
 				height: 86vh;
-				width: 45vw;
 				float: right;
 				flex: 1;
 				overflow-y: scroll;
 				padding: 0;
 				margin-top: 2vh;
 				margin-right: 0.7vw;
+			}
+			.days{
+				margin-left: 1vw;
+				margin-bottom: 0;
+				margin-top: 10px;
+			}
+			.labelDay{
+				color: black;
+				padding: 12px;
+				padding-right: 17.1px;
+				padding-left: 17.1px;
+				font-size: 20px;
+				margin-right: 3px;
+				border-radius: 9px;
+				background-color: #116466;
+				color: #DCDCDC;
+				cursor: pointer;
 			}
 			::-webkit-scrollbar{
 			    display: none;

@@ -3,35 +3,9 @@
 {% block title %}Make a Plan{% endblock %}
 
 {% block css %}
-	.day{
-		display: inline-block;
-	}
-	.days{
-		margin-top: 2mm;
-		margin-left: 5vw;
-		padding-bottom: 2.8vh;
-	}
-	input[type=checkbox]:checked ~ label{
-		background-color: #992600;
-	}
-	input[type="checkbox"]{
-		display: none;
-	}
-	.labelDay{
-		color: black;
-		padding-right: 2.3vh;
-		padding-left: 2.3vh;
-		padding-top: 2vh;
-		padding-bottom: 2vh;
-		font-size: 38px;
-		margin-right: 8px;
-		border-radius: 9px;
-		background-color: #116466;
-		color: #DCDCDC;
-		cursor: pointer;
-	}
 	.card{
-		width: 90vw;
+		display: flex;
+		width: 85vw;
 		margin-top: 20px;
 		margin-bottom: 20px;
 		margin-right: auto;
@@ -40,15 +14,17 @@
 		padding-top: 40px;
 		padding-bottom: 40px;
 		padding-left: 50px;
+		padding-right: 50px;
 		height: 12vh;
 		text-align: left;
 		background-color: #116466;
 		color: #DCDCDC;
 	}
 	h2{
+		flex: 10;
 		font-size: 50px;
 		font-weight: normal;
-		margin-bottom: 10px;
+		margin-top: 60px;
 		width: 26vw;
 	}
 	p{
@@ -59,6 +35,23 @@
 		background-color: black;
 		transition-duration: 0.3s;
 	}
+	form{
+		width: 100vw;
+	}
+	.deleteButton{
+		flex: 1;
+		margin-top: 60px;
+		background-color: #1A1A1D;
+		text-align: center;
+		border-radius: 50%;
+		height: 80px;
+		width: 60px;
+		font-size: 40px;
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-left: 5;
+		padding-right: 5;
+	}
 	@media screen and (min-device-width:1200px){
 		#exerciseName{
 			width: 500px;
@@ -67,7 +60,8 @@
 			width: 200px;
 		}
 		.card{
-			width: 70%;
+			width: 80%;
+			min-width: 4in;
 			height: 10%;
 			margin-top: 20px;
 			margin-bottom: 20px;
@@ -76,7 +70,7 @@
 			border-radius: 9px;
 			padding-top: 55px;
 			padding-bottom: 20px;
-			padding-left: 50px;
+			padding-left: 30px;
 			padding-right: 10px;
 			margin-right: auto;
 			margin-left: auto;
@@ -85,30 +79,21 @@
 			color: white;
 			border-radius: 12px;
 		}
+		.card:hover{
+			-webkit-box-shadow: 0 0 3px white;
+			box-shadow: 0 0 3px white;
+			transition-duration: 0s;
+		}
 		h2{
 			font-size: 25px;
 			font-weight: normal;
 			margin-top: 0vh;
 			color: white;
-			font-weight: bold;				
+			font-weight: bold;	
+			flex: 16;			
 		}
 		p{
 			font-size: 17px;
-		}
-		.days{
-			margin-left: 1vw;
-			margin-bottom: -0.5%;
-			margin-top: 1.5%;
-		}
-		.labelDay{
-			color: black;
-			padding: 12px;
-			font-size: 20px;
-			margin-right: 3px;
-			border-radius: 9px;
-			background-color: #116466;
-			color: #DCDCDC;
-			cursor: pointer;
 		}
 		form{
 			width: 100vw;
@@ -117,12 +102,17 @@
 			background-color: #1A1A1D;
 			text-align: center;
 			border-radius: 50%;
+			font-size: 20px;
 			height: 30px;
 			width: 30px;
 			padding-top: 0;
 			padding-bottom: 0;
-			padding-left: 5;
-			padding-right: 5;
+			padding-left: 2;
+			padding-right: 2;
+			margin-top: 0px;
+		}
+		input[type="submit"]{
+			margin-top: 0px;
 		}
 	}
 {% endblock %}
@@ -185,4 +175,5 @@
 			{% endfor %}
 		</div>
 	</form>
+</div>
 {% endblock %}

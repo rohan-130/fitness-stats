@@ -51,24 +51,35 @@ def tasksView(request):
 		day = datetime.now().weekday()
 		plan_list = Plans.objects.filter(creator_id=user_id)
 		mon =  tue = wed = thu = fri = sat = sun = 0
+		day_name = "none"
 		if day == 0:
 			plan_list = Plans.objects.filter(creator_id=user_id, mon=1)
+			day_name = "Monday"
 		if day == 1:
 			plan_list = Plans.objects.filter(creator_id=user_id, tue=1)
+			day_name = "Tuesday"
 		if day == 2:
 			plan_list = Plans.objects.filter(creator_id=user_id, wed=1)
+			day_name = "Wednesday"
 		if day == 3:
 			plan_list = Plans.objects.filter(creator_id=user_id, thu=1)
+			day_name = "Thursday"
 		if day == 4:
 			plan_list = Plans.objects.filter(creator_id=user_id, fri=1)
+			day_name = "Friday"
 		if day == 5:
 			plan_list = Plans.objects.filter(creator_id=user_id, sat=1)
+			day_name = "Saturday"
 		if day == 6:
 			plan_list = Plans.objects.filter(creator_id=user_id, sun=1)
+			day_name = "Sunday"
 
-		return render(request, "tasks.html", {"plan_list": plan_list})
+		return render(request, "tasks.html", {"plan_list": plan_list, "day": day_name})
 	else:
 		return redirect("/accounts/login")
+
+def health(request):
+	return render(request, 'health.html')
 
 	
 
