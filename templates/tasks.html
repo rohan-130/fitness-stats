@@ -5,14 +5,15 @@
 
 {% block css %}
 	.container1{
-		background-color: #116466;
 		border-radius: 9px;
 		overflow: scroll;
 		width: 90vw;
 		margin-left: auto;
 		margin-right: auto;
-		height: 50vh;
-		width: 90vw;
+		height: 82%;
+		width: 95vw;
+		margin-right: auto;
+		margin-left: auto;
 	}
 	.container2{
 		border-radius: 9px;
@@ -48,31 +49,34 @@
 	.inner1{
 		background-color: #992600;
 		flex: 2.5;
-		padding-top: 60px;
-		padding-bottom: 60px;
+		padding-top: 80px;
+		padding-bottom: 100px;
 		padding-right: 10px;
 		padding-left: 30px;
 		text-align: left;
 		border-top-left-radius: 15px;
 		border-bottom-left-radius: 15px;
+		font-size: 45px;
 	}
 	.inner2{
 		background-color: #292E2E;
 		flex: 5;
 		text-align: left;
 		padding: 60px;
+		padding-top: 80px;
 		border-top-right-radius: 15px;
 		border-bottom-right-radius: 15px;
+		font-size: 45px;
 	}
 	.tick{
 		float: right;
 		background-color: #116466;
 		height: 60px;
-		width: 60px;
+		width: 80px;
 		border-radius: 50%;
 		text-align: center;
 		font-size: 40px;
-		padding-top: 5px;
+		padding-top: 12px;
 	}
 	.tick:hover{
 		background-color: #1A1A1D;
@@ -88,11 +92,6 @@
 		font-size: 30px;
 		margin-top: -2vh;
 	}
-	.tick:hover{
-		background-color: #1A1A1D;
-		transition-duration: 0.3s;
-	}
-	
 	@media screen and (min-device-width:1200px){
 		.outerContainer{
 			display: flex;
@@ -100,13 +99,15 @@
 			width: 100vw;
 		}
 		.container1{
+			background-color: #116466;
 			height: 83.5vh;
-			width: 46%;
-			margin-top: 1.2%;
+			width: 8in;
+			margin-top: 1.5%;
 			margin-left: 2%;
 			overflow-y: scroll;
 			margin-right: 2vw;
-			flex: 1;
+			margin-right: auto;
+			margin-left: auto;
 		}
 		.container2{
 			margin-right: 2vw;
@@ -149,6 +150,7 @@
 			text-align: left;
 			border-top-left-radius: 9px;
 			border-bottom-left-radius: 9px;
+			font-size: 20px;
 		}
 		.inner2{
 			background-color: #292E2E;
@@ -160,6 +162,7 @@
 			padding-left: 30px;
 			border-top-right-radius: 9px;
 			border-bottom-right-radius: 9px;
+			font-size: 20px;
 		}
 		.tick{
 			float: right;
@@ -198,10 +201,10 @@
 <div class="outerContainer">
 	<div class="container1">
 		<h1>{{day}}</h1>
-		<form method="POST" action="">
+		<form method="POST" action="tasks">
 			{% csrf_token %}
-			{% for item in plan_list %}
-				<button class="outer">
+			{% for item in exercise_list %}
+				<button class="outer" name="doneExercise" value="{{item.id}}">
 					<div class="inner1">
 						{{item.exercise_name}}
 					</div>
@@ -212,13 +215,6 @@
 				</button>
 			{% endfor %}
 		</form>
-	</div>
-	<div class="container2">
-		<h1>Health</h1>
-		<div class="health">
-			<h3>No health requirements today</h3>
-			<img class="healthImg" height=300 src="{% static '/health.jpg' %}">
-		</div>
 	</div>
 </div>
 

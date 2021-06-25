@@ -12,7 +12,7 @@
 		<div class="navbar">
 			{% if user.is_authenticated %}
 				<a class="navbarItem dis" href="/accounts/logout" style="float: right;">LOGOUT</a>
-				<a class="navbarItem dis" style="float: right;">{{user.username}}</a>
+				<a class="navbarItem dis" style="float: right;">{{user.email}}</a>
 			{% endif %}
 			<a class="navbarItem" href="/fitness/plan">MAKE PLAN</a>
 			<a class="navbarItem" href="/fitness/tasks">TASKS FOR TODAY</a>
