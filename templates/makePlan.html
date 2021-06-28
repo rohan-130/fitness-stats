@@ -53,6 +53,10 @@
 		padding-right: 5;
 	}
 	@media screen and (min-device-width:1200px){
+		html{
+			width: 100vw;
+			min-width: 10in;
+		}
 		#exerciseName{
 			width: 500px;
 		}
@@ -60,24 +64,18 @@
 			width: 200px;
 		}
 		.card{
-			width: 80%;
-			min-width: 4in;
+			width: 5in;
 			height: 10%;
 			margin-top: 20px;
 			margin-bottom: 20px;
-			margin-left: 1%;
-			margin-right: 1%;
-			border-radius: 9px;
+			border-radius: 7px;
 			padding-top: 55px;
 			padding-bottom: 20px;
 			padding-left: 30px;
 			padding-right: 10px;
-			margin-right: auto;
-			margin-left: auto;
 			display: flex;
 			background-color: #116466;
 			color: white;
-			border-radius: 12px;
 		}
 		.card:hover{
 			-webkit-box-shadow: 0 0 3px white;
@@ -171,7 +169,7 @@
 		<div class="displayActivities" id="activityList" action="plan" request="POST">
 			{% csrf_token %}
 			{% for exercise in plan_list %}
-				<div class='card'><h2>{{exercise}}</h2><button class="deleteButton" value="{{exercise.id}}" name="submit">-</button></div>
+				<div class='card'><h2>{{exercise}}</h2><button class="deleteButton" value="{{exercise.id}}" name="submit"><b>&minus;</b></button></div>
 			{% endfor %}
 		</div>
 	</form>

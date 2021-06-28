@@ -66,3 +66,6 @@ def tasksView(request):
 		return render(request, "tasks.html", {"exercise_list": exercise_list, "day": day_name})
 	else:
 		return redirect("/accounts/login")
+
+def logView(request):
+	return render(request, 'log.html')

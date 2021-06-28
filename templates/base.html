@@ -7,20 +7,54 @@
 		{% block css %}{% endblock %}
 	</style>
 	<title>{% block title %}{% endblock %}</title>
+	<link rel="icon" href="{% static '/logo.css' %}">
 	<header>
 		<a class="logo" href="/fitness/tasks"><img class="logoImage" src="{% static '/logo.png' %}"></a>
 		<div class="navbar">
 			{% if user.is_authenticated %}
-				<a class="navbarItem dis" href="/accounts/logout" style="float: right;">LOGOUT</a>
-				<a class="navbarItem dis" style="float: right;">{{user.email}}</a>
+				<a class="navbarItem" href="/accounts/logout" style="float: right;">LOGOUT</a>
+				<a class="navbarItem name" style="float: right;">{{user.username}}</a>
 			{% endif %}
 			<a class="navbarItem" href="/fitness/plan">MAKE PLAN</a>
 			<a class="navbarItem" href="/fitness/tasks">TASKS FOR TODAY</a>
+			<a class="navbarItem" href="/fitness/log">LOG</a>
+			<a class="navbarItem show" onclick='phoneNav();'>&#8801;</a>
 		</div>
 	</header>
+	<script>
+		function phoneNav(){
+			var x = document.getElementById("phoneNavbar");
+			var y = document.getElementById("body1");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                y.style.display = "block";
+
+            } else {
+                x.style.display = "block";
+                y.style.display = "none";
+            }
+		}
+	</script>
+
+
+	<div id="phoneNavbar">
+		<ul>
+			<li class="phoneItem" ><a href="/fitness/plan">MAKE PLAN</a></li>
+			<li class="phoneItem" ><a href="/fitness/tasks">TASKS FOR TODAY</a>
+			<li class="phoneItem" ><a href="/fitness/log">LOG</a></li>
+			{% if user.is_authenticated %}
+				<li class="phoneItem"><a href="/accounts/logout">LOGOUT</a></li>
+				<li class="phoneItem"><a>{{user.username}}</a></li>
+			{% endif %}
+	</div>
+
+
+
 </head>
 <body>
-	{% block body%}{% endblock %}
+	<div id="body1">
+		{% block body%}{% endblock %}
+	</div>
 </body>
 	<h1 class="landscapeWarning">Landscape View Currently Unavailable</h1>
 </html>

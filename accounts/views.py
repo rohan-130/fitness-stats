@@ -5,10 +5,14 @@ from django.contrib import messages
 def register(request):
 	if request.method == 'POST':
 		first_name = request.POST['first_name']
+		username = request.POST['username']
 		email = request.POST['email']
 		password = request.POST['password']
 
-		if User.objects.filter(email=email).exists():
+		if User.objects.filter(username=username).exists():
+			messages.info(request, "An account with this email already exists!")
+			return redirect('register')
+		elif User.objects.filter(email=email).exists():
 			messages.info(request, "An account with this email already exists!")
 			return redirect('register')
 		elif first_name == "" or username == "" or email == "" or password == "":
