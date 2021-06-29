@@ -9,7 +9,7 @@
 	<title>{% block title %}{% endblock %}</title>
 	<link rel="icon" href="{% static '/logo.css' %}">
 	<header>
-		<a class="logo" href="/fitness/tasks"><img class="logoImage" src="{% static '/logo.png' %}"></a>
+		<a class="logo"><img class="logoImage" src="{% static '/logo.png' %}"></a>
 		<div class="navbar">
 			{% if user.is_authenticated %}
 				<a class="navbarItem" href="/accounts/logout" style="float: right;">LOGOUT</a>

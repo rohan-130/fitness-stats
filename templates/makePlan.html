@@ -63,19 +63,26 @@
 		#unit{
 			width: 200px;
 		}
+		.container{
+			margin-left: auto;
+			margin-right: auto;
+			width: 98vw;
+		}
 		.card{
-			width: 5in;
+			width: 30vw;
+			min-width: 4in;
 			height: 10%;
 			margin-top: 20px;
 			margin-bottom: 20px;
-			border-radius: 7px;
+			margin-left: 20px;
+			border-radius: 12px;
 			padding-top: 55px;
 			padding-bottom: 20px;
 			padding-left: 30px;
 			padding-right: 10px;
 			display: flex;
 			background-color: #116466;
-			color: white;
+			color: #DCDCDC;
 		}
 		.card:hover{
 			-webkit-box-shadow: 0 0 3px white;
@@ -112,11 +119,17 @@
 		input[type="submit"]{
 			margin-top: 0px;
 		}
+		.noExercises{
+			position: relative;
+			top: 50%;
+			transform: translate(0%, -55%);
+		}
 	}
 {% endblock %}
 
 {% block body%}
 
+<div class="main">
 <div class="container"> 
 	<form method="POST" action="plan">
 		<div class="addActivity"> 
@@ -171,7 +184,11 @@
 			{% for exercise in plan_list %}
 				<div class='card'><h2>{{exercise}}</h2><button class="deleteButton" value="{{exercise.id}}" name="submit"><b>&minus;</b></button></div>
 			{% endfor %}
+			{% if length == 0 %}
+				<h2 class="noExercises card">Your exercises will appear here</h2>
+			{% endif %}
 		</div>
 	</form>
+</div>
 </div>
 {% endblock %}

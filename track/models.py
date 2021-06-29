@@ -20,3 +20,7 @@ class Day(models.Model):
 	today = models.DateField() 
 	exercise_id = models.IntegerField(null=True)
 
+'''class Month(models.Model):
+	user_id = models.IntegerField()
+	number_done = models.DecimalField(default=0)
+	total_number = models.DecimalField(default=0)'''

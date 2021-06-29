@@ -216,9 +216,9 @@
 			}
 			input[type="text"], input[type="email"], input[type="password"]{
 				padding: 15px;
-				font-size: 20px;
+				font-size: 18px;
 				margin-left: 1vw;
-				border-radius: 5px;
+				border-radius: 4px;
 				margin-bottom: 8px;
 				width: 4in;
 			}
@@ -253,7 +253,7 @@
 				width: 200px;
 				padding: 15px;
 				border-radius: 12px;
-				font-size: 20px;
+				font-size: 18px;
 				margin-left: 1vw;
 				border-radius: 5px;
 				margin-bottom: 3mm;
@@ -263,28 +263,28 @@
 				padding-right: 30px;
 				padding-left: 30px;
 				margin-left: 1vw;
-				font-size: 20px;
+				font-size: 18px;
 				border-radius: 5px;
 			}
 			.container{
-				display: flex;
 				height: 90vh;
+				display: flex;
+				width: 100%;
+				min-width: 7in;
 			}
-			.addActivity{				
+			.addActivity{
+				flex: 0 0 5in;				
 				float: left;
-				width: 46vw;
 				height: 4in;
 				padding: 0;
 				margin: 0;
 				margin-top: 22.5vh;
-				flex: 1;
 			}
 			.displayActivities{
-				width: 40vw;
+				flex: 0 0 5in;
 				text-align: center;
 				overflow-x: hidden;
 				float: right;
-				flex: 1.3;
 				height: 86vh;
 				overflow-y: scroll;
 				padding: 0;

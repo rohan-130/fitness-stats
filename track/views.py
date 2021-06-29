@@ -24,7 +24,7 @@ def makePlanView(request):
 				exercise_id = request.POST['submit']
 				Exercises.objects.all().filter(id=exercise_id).delete()
 		plan_list = Exercises.objects.filter(creator_id=user_id)
-		return render(request, "makePlan.html", {"plan_list": plan_list})
+		return render(request, "makePlan.html", {"plan_list": plan_list, "length": len(plan_list)})
 	else:
 		return redirect("/accounts/login")
 
@@ -35,6 +35,7 @@ def tasksView(request):
 			exercise_id = request.POST.get('doneExercise', None)
 			day_object = Day(user_id=user_id, today = date.today(), exercise_id=exercise_id)
 			day_object.save()
+
 		exercise_done_qs = Day.objects.filter(user_id=user_id, today=date.today())
 		exercise_done_list = [a.exercise_id for a in exercise_done_qs]
 		mon =  tue = wed = thu = fri = sat = sun = 0
