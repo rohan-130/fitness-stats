@@ -13,13 +13,13 @@
 			-webkit-appearance: none;
 		}
 		::-moz-selection { /* Code for Firefox */
-			color: #116466;
-			background: white;
+			color: #DCDCDC;
+			background: #992600;
 		}
 
 		::selection {
-			color: #116466;
-			background: white;
+			color: #DCDCDC;
+			background: #992600;
 		}
 		input[type="text"], input[type="email"], input[type="password"]{
 			padding: 2.5vh;
@@ -53,6 +53,7 @@
 			display: block;
 			font-size: 170px;
 			margin-top: -35;
+			margin-right: 20px;
 		}
 		#phoneNavbar{
 			display: none;
@@ -167,8 +168,8 @@
 		}
 		.labelDay{
 			color: black;
-			padding-right: 2.68vh;
-			padding-left: 2.68vh;
+			padding-right: 2.2vh;
+			padding-left: 2.2vh;
 			padding-top: 2vh;
 			padding-bottom: 2vh;
 			font-size: 38px;

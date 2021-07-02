@@ -6,4 +6,5 @@ urlpatterns = [
     path('plan', views.makePlanView, name="plan"),
     path('tasks', views.tasksView, name="tasks"),
     path('log', views.logView, name="log"),
+    path('blog', views.blog, name="blog"),
 ]

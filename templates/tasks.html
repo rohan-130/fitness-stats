@@ -72,12 +72,12 @@
 	.tick{
 		float: right;
 		background-color: #116466;
-		height: 60px;
+		height: 80px;
 		width: 80px;
 		border-radius: 50%;
 		text-align: center;
 		font-size: 40px;
-		padding-top: 12px;
+		padding: 0;
 	}
 	.tick:hover{
 		background-color: #1A1A1D;
@@ -167,12 +167,12 @@
 		.tick{
 			float: right;
 			background-color: #116466;
-			height: 28px;
+			height: 30px;
 			width: 30px;
+			padding: 0;
 			border-radius: 50%;
 			text-align: center;
 			font-size: 17px;
-			padding-top: 2px;
 		}
 		.displayActivities{
 			background-color: white;
@@ -204,15 +204,15 @@
 		<form method="POST" action="tasks">
 			{% csrf_token %}
 			{% for item in exercise_list %}
-				<button class="outer" name="doneExercise" value="{{item.id}}">
+				<div class="outer">
 					<div class="inner1">
 						{{item.exercise_name}}
 					</div>
 					<div class="inner2">
 						x {{item.exercise_time}}
-						<p class="tick">&#10003;</p>
+						<button class="tick" name="doneExercise" value="{{item.id}}">&#10003;</button>
 					</div>
-				</button>
+				</div>
 			{% endfor %}
 		</form>
 	</div>

@@ -45,28 +45,26 @@
 {% block body%}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.0/chart.min.js"></script>
 <!--<h1 class="score">99<p class="scoreInfo">Percent of completed exercises since the beginning</p></h1>-->
-
 <div class="graph">
 	<canvas id="myChart"></canvas>
 </div>
 <script>
 	var myChart = document.getElementById("myChart").getContext("2d");
-	var a = [];
-	var b = [];
-	for (var i=0; i<10; i++){
-		a[i] = 80 + (i/10)*20;
-		b[i] = '08/02/2021';
-	}
 
 	Chart.defaults.color = '#DCDCDC';
+
+	var data = JSON.parse("{{data|escapejs}}");
+
+	a= data["list_dates"]
+	b= data["list_score"]
 
 	var userChart = new Chart(myChart, {
 		type: "bar",
 		data: {
-			labels: b,
+			labels: a,
 			datasets: [{
 				label: 'Completed',
-				data: a,
+				data: b,
 				backgroundColor: '#116466',
 			}]
 		},

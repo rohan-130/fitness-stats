@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+
+header{
+	position: fixed;
+}
+
+h1{
+	text-align: center;
+	margin-top: 15%;
+	padding-bottom: 2vh;
+}
+p{
+	text-align: justify;
+	font-size: 22px;
+	line-height: 26px;
+	padding-bottom: 5vh;
+}
+.blogContainer{
+	width: 60vw;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	display: inline-block;
+}
+.phoneContainer{
+	position: fixed;
+	margin-top: 0;
+	top: 50%;
+	right: 20%;
+	transform: translate(60%, -40%);
+}
+.phoneImage{
+	height: 80vh;
+}
+.screenImage{
+	height: 62vh;
+	position: fixed;
+	margin-top: 0;
+	top: 50%;
+	right: 40%;
+	transform: translate(65%, -43%);
+	border: solid 9px black;
+	border-bottom: solid 9vh black;
+	border-top: solid 9vh black;
+	border-radius: 30px;
+	-webkit-box-shadow: 0 0 20px #423f3e;
+	box-shadow: 0 0 10px #423f3e;
+}
+
+{% endblock %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body%}
+
+<div class="blogContainer">
+	<h1>Fitness</h1>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div class="phoneContainer">
+	<!--<img class="screenImage" src="{% static '/screen.png' %}">-->
+	<video class="screenImage" autoplay muted loop>
+		<source src="{% static '/screenrecording.mp4' %}" type="video/mp4">
+	</video>
+</div>
+
+{% endblock %}
