@@ -57,7 +57,7 @@
 		}
 		#phoneNavbar{
 			display: none;
-			height: 65vh;
+			height: 80vh;
 			width: 100vw;
 			text-align: center;
 			padding-top: 10vh;
@@ -147,7 +147,6 @@
 			overflow: scroll;
 			height: 30vh;
 			padding-bottom: 10%;
-			border-radius: 9px;
 		}
 		.landscapeWarning{
 			display: none;
@@ -185,6 +184,12 @@
 		p{
 			color: #DCDCDC;
 			margin-left: 5vw;
+		}
+		input:-webkit-autofill,
+		input:-webkit-autofill:hover, 
+		input:-webkit-autofill:focus, 
+		input:-webkit-autofill:active{
+			-webkit-box-shadow: 0 0 0 30px #116466 inset !important;
 		}
 		@media screen and (max-device-width:1200px) and (orientation:landscape){
 			body{

@@ -2,26 +2,27 @@
 {% load static %}
 
 {% block css %}
-
-header{
-	position: fixed;
+body{
+	padding-bottom: 10vh;
 }
-
 h1{
-	text-align: center;
-	margin-top: 15%;
+	margin-left: 0;
+	padding-left: 7vw;
 	padding-bottom: 2vh;
+	font-size: 100px;
+	margin-top: 5vh;
+	font-family: 'Trebuchet MS', serif;
 }
 p{
-	text-align: justify;
-	font-size: 22px;
-	line-height: 26px;
-	padding-bottom: 5vh;
+	font-size: 50px;
+	line-height: 70px;
+	padding-bottom: 3vh;
+	padding-right: 7vw;
+	padding-left: 7vw;
+	margin-left: 0;
+	font-family: 'Trebuchet MS', serif;
 }
 .blogContainer{
-	width: 60vw;
-	padding-left: 5vw;
-	padding-right: 5vw;
 	display: inline-block;
 }
 .phoneContainer{
@@ -48,6 +49,40 @@ p{
 	-webkit-box-shadow: 0 0 20px #423f3e;
 	box-shadow: 0 0 10px #423f3e;
 }
+video{
+	display: none;
+}
+
+@media screen and (min-device-width:1200px){
+	video{
+		display: block;
+	}
+	.blogContainer{
+		width: 60vw;
+		padding-left: 5vw;
+		padding-right: 5vw;
+	}
+	header{
+		position: fixed;
+	}
+	p{
+		text-align: justify;
+		font-size: 18px;
+		line-height: 28px;
+		padding-bottom: 5vh;
+		padding-right: 3vw;
+		padding-left: 3vw;
+		font-weight: lighter;
+	}
+	h1{
+		text-align: center;
+		margin-top: 7vw;
+		font-size: 50px;
+		padding-right: 3vw;
+		padding-left: 3vw;
+		font-weight: lighter;
+	}
+}
 
 {% endblock %}
 
@@ -56,15 +91,15 @@ p{
 {% block body%}
 
 <div class="blogContainer">
-	<h1>Fitness</h1>
+	<h1>Exercise Pain when Starting</h1>
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have <a style="color: #32a852" href='https:\\logfit.co'><u>logfit.co</u></a> evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 </div>
 <div class="phoneContainer">
 	<!--<img class="screenImage" src="{% static '/screen.png' %}">-->

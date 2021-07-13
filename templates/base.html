@@ -2,7 +2,7 @@
 {% load static %}
 <head>
 	<link rel="stylesheet" href="{% static '/base.css' %}">
-	<link rel="shortcut icon" href="https://cdn.bleacherreport.net/images/team_logos/328x328/mens_tennis.png">
+	<link rel="icon" type="image/png" href="/static/favicon.ico" />
 	<style>
 		{% block css %}{% endblock %}
 	</style>
@@ -40,6 +40,7 @@
 
 	<div id="phoneNavbar">
 		<ul>
+			<li class="phoneItem" ><a href="/fitness/blog">ABOUT</a></li>
 			<li class="phoneItem" ><a href="/fitness/plan">MAKE PLAN</a></li>
 			<li class="phoneItem" ><a href="/fitness/tasks">TASKS FOR TODAY</a>
 			<li class="phoneItem" ><a href="/fitness/log">LOG</a></li>

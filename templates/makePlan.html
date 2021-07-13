@@ -71,13 +71,13 @@
 		.card{
 			width: 30vw;
 			min-width: 4in;
-			height: 10%;
+			height: 12%;
 			margin-top: 20px;
 			margin-bottom: 20px;
 			margin-left: 20px;
-			border-radius: 12px;
-			padding-top: 55px;
-			padding-bottom: 20px;
+			border-radius: 10px;
+			padding-top: 50px;
+			padding-bottom: 0px;
 			padding-left: 30px;
 			padding-right: 10px;
 			display: flex;
@@ -182,7 +182,7 @@
 		<div class="displayActivities" id="activityList" action="plan" request="POST">
 			{% csrf_token %}
 			{% for exercise in plan_list %}
-				<div class='card'><h2>{{exercise}}</h2><button class="deleteButton" value="{{exercise.id}}" name="submit"><b>&minus;</b></button></div>
+				<div class='card'><h2>{{exercise}}</h2><button class="deleteButton" value="{{exercise.id}}" name="submit">-</button></div>
 			{% endfor %}
 			{% if length == 0 %}
 				<h2 class="noExercises card">Your exercises will appear here</h2>
